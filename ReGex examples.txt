@@ -1,0 +1,109 @@
+/*
+ReGex Examples
+Try these against your own test strings in a site such as https://regex101.com/
+Modify and create your own as well.
+*/
+
+/* 
+Anchors ^ $
+*/
+^Hi
+
+bye$
+
+/* 
+Quantifiers * + ? {}
+*/
+z*
+
+sleepy+
+
+kite?
+
+thic{2}
+
+mo{2,}
+
+abc{2,4}
+
+/*
+OR AND GROUPING - | [] ()
+*/
+(ch)?at
+
+[ch]at
+
+(c|h)at
+
+/*
+CHARACTER CLASSES - \d \w \s \S .
+*/
+
+\d
+
+\w
+
+\s
+
+\S 
+
+b.t
+
+/*
+Bracket Expressions
+*/
+[aeiouy]
+
+[a-d0-9]
+
+[^a-z]
+
+/*
+Escaping characters
+*/
+[\[\]]
+
+\\[\w]+
+
+[\\\w]
+
+
+/*
+SIN number
+
+Explanation:
+
+^\d{3} - Start of input string must be 3 numbers
+\s? - 0 or 1 whitespace
+\d{3} - 3 numbers
+\s? - 0 or 1 whitespace
+\d{3}$ - input string must terminate with 3 numbers
+*/
+^\d{3}\s?\d{3}\s?\d{3}$
+
+/*
+Basic Phone number validation
+
+Explanation:
+^[2-9] - start of input string must begin with number betwee 2 and 9
+\d{2} - 2 numbers
+- - a literal dash
+\d{3} - 3 numbers
+- - a literal dash
+\d{4}$ - input string must terminate with 4 numbers
+*/
+^[2-9]\d{2}-\d{3}-\d{4}$
+
+
+/*
+RegEx in JavaScript
+
+In a browser, open web dev tools (press F12)
+Refer to https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+for more info
+*/
+// Enclose regex between slashes
+let re = /C[\w]*n/;
+
+re.exec("Ceridian");
+re.exec("banana");
